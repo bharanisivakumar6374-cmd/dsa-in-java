@@ -1,0 +1,30 @@
+ public class Main{
+       static class college {
+        String depart;
+        int lab;
+        int classroom;
+        
+    college(String depart, int lab, int classroom){
+        this.depart=depart;
+        this.lab=lab;
+        this.classroom=classroom;
+        System.out.println("this is first constructor");
+    }
+    
+    college(String depart){
+        this.depart=depart;
+    }
+     
+     
+    college(int lab,int classroom){
+        this.lab=lab;
+        this.classroom=classroom;
+    }
+       }
+	public static void main(String[] args) {
+		college c=new college("CSE",2,202);
+		college c2=new college("cse");
+		college c3=new college(5,503);
+	}
+
+}
