@@ -1,0 +1,94 @@
+import java.util.Scanner;
+public class Main{
+    public static void array(int arr[]){
+        System.out.println("*****************************************");
+        System.out.println("prime logic");
+        System.out.println("*****************************************");
+        for(int i=0;i<arr.length;i++){
+             int count=0;
+            for(int j=1;j<=arr[i];j++){
+                if(arr[i]%j==0){
+                    count++;
+                }
+                
+            }
+        if(count==2){
+            System.out.println(+arr[i]+" "+"prime");
+        } else{
+            System.out.println(arr[i]+" not prime");
+            System.out.println();
+    }}
+    }
+public static void armstrong(int arr[]){
+    System.out.println("*****************************************");
+        System.out.println(" this armstrong number logic ");
+      System.out.println("*****************************************");
+        for(int i=0;i<arr.length;i++){
+        int sum=0,n=arr[i], temp=n;
+        int count=(int)Math.log10(arr[i])+1;
+        while(n!=0){
+            int x=n%10;
+            sum+=(int)Math.pow(x,count);
+           n=n/10;
+        }
+        if(temp==sum){
+            System.out.println(+arr[i]+" "+"armstrong");
+        } else{
+            System.out.println(arr[i]+" not armstrong");
+        } 
+        System.out.println();
+    }
+}
+public static void palindrome(int arr[]){
+    System.out.println("*****************************************");
+       System.out.println(" this palindrome number logic ");
+      System.out.println("*****************************************");
+        for(int i=0;i<arr.length;i++){
+        int num=arr[i];
+        int n=num,sum=0;
+        while(n!=0){
+            int r=n%10;
+            sum=sum*10+r;
+            n=n/10;
+        }
+        if(sum==num){
+            System.out.println(arr[i]+" "+"palindrome");
+        } else{
+            System.out.println(arr[i]+" "+"not palindrome");
+        }
+        System.out.println();
+    }
+}
+public static void perfect(int arr[]){
+       System.out.println("*****************************************");
+       System.out.println(" this perfect number logic ");
+       System.out.println("*****************************************");
+        for(int i=0;i<arr.length;i++){
+        int num=arr[i];
+        int n=num,sum=0;
+        for(int j=1;j<n;j++){
+            if(n%j==0){
+                sum+=j;
+            }
+            
+            }
+            if(sum==num){
+                System.out.println(arr[i]+""+"perfect");
+        } else{
+            System.out.println(arr[i]+" "+"not perfect");
+        }
+        System.out.println();
+        }}
+public static void main(String[] args) {
+	 Scanner hp=new Scanner(System.in);
+	 int h=hp.nextInt();
+	 int arr[]=new int[h];
+	 for(int i=0;i<h;i++){
+        arr[i]=hp.nextInt();
+        }
+        array(arr);
+        armstrong(arr);
+        palindrome(arr);
+        perfect(arr);
+	}
+}
