@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class Banking {
+  private Double balance; 
+   void setBalance(Double amount){
+      balance=amount;
+  }
+  public Double getBalance(){
+      return balance;
+      
+  }
+  public  Double withdraw(Double value){
+      boolean n=true;
+      if(balance>=value){
+       balance=balance-value;
+      }else{
+          System.out.println("pls, check your balance");
+          n=false;
+      }
+       Double values=(n==true)?value:0.0;
+         return values;
+      
+      
+  }
+  public Double deposite(Double n){
+       balance=balance+n;
+       return n;
+  }
+	public static void main(String[] args) {
+	    Scanner hp=new Scanner(System.in);
+		Banking b= new Banking();
+		b.setBalance(1000.0);
+		System.out.println("**************************************************");
+		System.out.println("*     welcome to g2 bank                         *");
+		System.out.println("***************************************************");
+		System.out.println("your balance is:"+b.getBalance());
+		System.out.println();
+		System.out.println("pls, enter your amount withdraw:");
+		Double amount=hp.nextDouble();
+		System.out.println("you withdraw amount is:"+b.withdraw(amount));
+		System.out.println();
+		System.out.println("pls, enter your amount deposite:");
+		Double a=hp.nextDouble();
+		System.out.println("your  deposite is:"+b.deposite(a));
+		System.out.println();
+		System.out.println("your balance is:"+b.getBalance());
+		System.out.println("thanks come again");
+		System.out.println("***************************************************");
+		
+		
+		
+	}
+}
