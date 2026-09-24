@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main
+{
+    static int prime( ArrayList<Integer> e){
+        int p_count=0;
+        for(int x:e){
+          boolean t=true;
+          for(int j=2;j<x;j++){
+        if(x!=j & x%j==0 ){
+            t=false;
+          break;
+          }
+          }
+          if (t==true){
+           p_count++;
+          }
+        }
+          return p_count;
+    }
+    static int armstrong(ArrayList<Integer> e1){
+       int a_count=0;
+        for(int y:e1){
+        int count=(int)Math.log10(y)+1;
+        int num=y;
+        int arm=0;
+        while(y!=0){
+            int rem=y%10;
+             arm+=(int)Math.pow(rem,count);
+            y=y/10;
+        }
+        if(arm==num){
+            a_count++;
+        }
+        }
+       return a_count; 
+    }
+	public static void main(String[] args) {
+     Scanner hp=new Scanner(System.in);
+     ArrayList<Integer> e=new ArrayList<>();
+     int n=hp.nextInt();
+     for(int i=0;i<n;i++){
+         e.add(hp.nextInt());
+     }
+     ArrayList<Integer> e1=new ArrayList<>();
+     for(int i=0;i<n;i++){
+         e1.add(hp.nextInt());
+     }
+     System.out.println(prime(e));
+     System.out.println(armstrong(e1));
+      
+	}
+      }
