@@ -1,0 +1,26 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+     Scanner hp=new Scanner(System.in);
+     ArrayList e=new ArrayList<>();
+     int n=hp.nextInt();
+     for(int i=0;i<n;i++){
+         e.add(hp.nextInt());
+     }
+     System.out.println(e);
+     e.remove(0);
+     System.out.println(e);
+     e.set(0,"hello");
+     e.set(1,"dude");
+     System.out.println(e);
+     e.size();
+     System.out.println(e);
+     e.set(0,10);
+     e.set(1,20);
+      System.out.println(e);
+     
+     
+	}
+}
